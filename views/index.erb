@@ -95,16 +95,6 @@
 
 
 
-
-<!--<section class="txt container-fluid">
-  <div class="row">
-    <p>30 objects across your City, including a lighthouse, a flagpole, lamp posts,
-      benches and trash cans will be waking up, inviting citizens to strike up
-      playful conversations in the street!</p>
-  </div>
-</section>-->
-
-
 <!--Objects-->
 <%# <section id="obj" class="container-fluid">
   <div class="row">
@@ -155,6 +145,11 @@
 </section>
 
 
+<section class="txt container-fluid">
+  <div class="row">
+  </div>
+</section>
+
 <script type="text/javascript">
   $.getJSON("https://hello-lamp-post-api.herokuapp.com/locations/59", function(data){
 
@@ -171,8 +166,8 @@
 </script>
 
 
-<!--Map-->
-<%= erb :_googlemap %>
+<!--Map
+<%= erb :_googlemap %>-->
 
 
 
