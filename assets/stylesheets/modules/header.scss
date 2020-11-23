@@ -1,0 +1,32 @@
+// =================================================================
+// 	Mediapreview
+// 	Header
+// =================================================================
+
+
+.navbar {
+  border: 0;
+  font-size: 13px;
+  position: fixed;
+  margin-bottom: 0;
+  color: $colorTwo;
+  background-color: $colorWhite;
+
+  .navbar-toggle {
+    z-index: 1;
+    border-color: $colorThree;
+  }
+
+  .navbar-brand {
+    float: none;
+    padding: 0;
+    line-height: 0;
+    position: absolute;
+
+    img {
+      top: 0;
+      width: 35%;
+      padding: 3% 5%;
+    }
+  }
+}

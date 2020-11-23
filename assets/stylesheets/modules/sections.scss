@@ -1,0 +1,889 @@
+// =================================================================
+// 	Hello Lampost
+// 	Sections
+// =================================================================
+/*Mobile Phone Media Query*/
+@include mq("super-small", "max-width") {
+}
+
+/*Tablet Laptop Media Query*/
+@include mq("extra-small", "min-width") {
+}
+
+/*Small Laptop Media Query*/
+@include mq("small", "min-width") {
+}
+
+/*Laptop Media Query*/
+@include mq("large", "min-width") {
+}
+
+/*Desktop Media Query*/
+@include mq("extra-extra-large", "min-width") {
+}
+
+
+
+
+.notification {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: block;
+	z-index: 100;
+	background: $colorThree;
+	width: 100%;
+	height: 70px;
+	@include animation(fadeInNotification 0.8s cubic-bezier(0.730, -0.600, 0.320, 1.650));
+
+	.link-exit {
+		position: relative;
+		float: right;
+		margin-top: 23px;
+	}
+
+	h3 {
+		float: left;
+		padding-top: 20px;
+		color: #fff;
+	}
+
+	&.inactive {
+		display: none;
+	}
+}
+
+
+hr {
+  width: 70px;
+  padding: 2px;
+  border: none;
+  margin: -10px 0;
+  position: absolute;
+  border-radius: 25px;
+  background-color: $colorTwo;
+}
+
+
+section {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  padding: 25% 0;
+  max-width: none;
+  overflow: hidden;
+
+  /*Tablet Media Query*/
+  @include mq("extra-small", "min-width") {
+    padding: 8% 0;
+  }
+}
+
+
+.container-fluid {
+  overflow: hidden;
+}
+
+
+
+
+
+
+.navbar {
+  border: 0;
+  font-size: 13px;
+  position: fixed;
+  margin-bottom: 0;
+  color: $colorTwo;
+  background-color: $colorWhite;
+
+  .navbar-toggle {
+    z-index: 1;
+    border-color: $colorThree;
+
+    .icon-bar {
+      background-color: $colorThree;
+    }
+
+    &:hover {
+      border-color: $colorTwo;
+      background: $colorTwo;
+    }
+  }
+
+  .navbar-brand {
+    float: none;
+    padding: 0;
+    line-height: 0;
+    position: absolute;
+
+    img {
+      top: 0;
+      width: 35%;
+      padding: 3% 5%;
+    }
+  }
+
+  #myNavbar {
+    a {
+      color: $colorType;
+    }
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    .navbar-brand {
+      img {
+        width: 29%;
+        padding: 2% 5%;
+      }
+    }
+  }
+
+
+  /*Laptop Media Query*/
+  @include mq("small", "min-width") {
+    font-size: 18px;
+
+    .navbar-brand {
+      width: 25%;
+
+      img {
+        width: 40%;
+      }
+    }
+  }
+
+  /*Desktop Media Query*/
+  @include mq("extra-extra-large", "min-width") {
+    font-size: 30px;
+  }
+}
+
+
+
+
+/*Landing Page*/
+header {
+  width: 100%;
+  height: auto;
+  padding: 12% 0;
+  overflow: hidden;
+  min-height: 25rem;
+  position: relative;
+  background-color: $colorOne;
+
+  img {
+    width: 18%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .col-sm-12 {
+    margin: 0 16%;
+
+    h1 {
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    a {
+      margin-top: 130px;
+      text-decoration: none;
+    }
+
+    .link-btn-one {
+
+      &:after {
+  		  @include transform(rotate(90deg));
+  		  @include transition(all, 0.3s, ease-in-out);
+  	   }
+    }
+
+  	.link-btn-one.active:after {
+  		@include transform(rotate(-90deg));
+  	}
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    img {
+      width: 50%;
+      padding-top: 15%;
+    }
+    .col-sm-12 {
+      margin: 0;
+
+      h1 {
+        font-size: 2.9rem;
+      }
+
+      a {
+        margin-top: 60px;
+      }
+    }
+  }
+}
+
+
+#about {
+  height: 85vh;
+  padding: 0;
+  background-color: $colorWhite;
+
+    .container {
+      margin: 0% 8%; 
+
+      .content {
+        width: 50%;
+        margin-top: 20%;
+        padding-right: 8%;
+
+        h2 {
+          margin-bottom: 5%;
+        }
+      }
+    }
+  
+
+  .sideimg {
+    height: 85vh;
+    background-size: 150%;
+    //background-color: $colorThree;
+    background-image: url('/images/staffordshire_img/lookingmap.jpg'); 
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    .sideimg {
+      height: 60vh;
+    }
+  }
+}
+
+
+
+#testimonials {
+  height: 55vh;
+  padding-right: 9%;
+  background-color: $colorWhite;
+
+  #myCarousel {
+    background-color: $colorWhite;
+
+    .carousel-inner {
+      width: 70%;
+      margin: 0 auto;
+
+      .item {
+        span {
+          font-size: 6rem;
+          font-weight: bolder;
+          color: $colorThree;
+        }
+
+        p {
+          font-size: 1.1rem;
+          text-align: center;
+          color: $colorTwo;
+        }
+        .customer {
+          opacity: 0.8;
+          font-size: 1rem;
+          margin-top: 10px;
+          color: $colorTwo;
+          letter-spacing: 1px;
+          font-family: "Gotham-bold", sans-serif;
+        }
+      }
+    }
+
+    .carousel-control {
+      opacity: 1;
+      background-image: none;
+
+      span {
+        color: $colorOne;
+
+        &:hover {
+          color: $colorTwo;
+        }
+      }
+    }
+
+    .carousel-indicators {
+      bottom: -50px;
+    }
+  }
+
+  /*Desktop Media Query*/
+  @include mq("extra-extra-large", "min-width") {
+    #myCarousel {
+      .carousel-inner {
+        .item {
+          p {
+            font-size: 2.2rem;
+          }
+          .customer {
+            font-size: 1.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("extra-small", "min-width") {
+    padding: 5% 0 0 0;
+
+    #myCarousel {
+      .carousel-inner {
+        .item {
+          p {
+            font-size: .9em;
+          }
+          .customer {
+            font-size: .9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#testimonial {
+  height: auto;
+  background-color: $colorTwo;
+
+  .content {
+    margin: 5% 2%;
+    padding-right: 9%;
+
+    span {
+      font-size: 6rem;
+      font-weight: bolder;
+      color: $colorThree;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: $colorWhite;
+    }
+
+    .customer {
+      opacity: 0.8;
+      font-size: 1rem;
+      margin-top: 10px;
+      font-style: italic;
+      color: $colorThree;
+      letter-spacing: 1px;
+      font-weight: bolder;
+    }
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    .content {
+      p {
+        font-size: .9em;
+      }
+    }
+
+  }
+}
+
+
+
+
+.bg1 {
+  height: 700px;
+  background-attachment: fixed;
+  background-position: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/images/bg-how-it-works.jpg");
+
+  /*Mobile Phone to Tablets Media Query*/
+  @include mq("medium", "max-width") {
+    height: 500px;
+    background-attachment: inherit;
+  }
+}
+
+
+
+
+#process {
+  height: auto;
+  padding: 0;
+  background-color: $colorWhite;
+
+  .sideimg {
+    height: 85vh;
+    background-size: 150%;
+    //background-color: $colorOne;
+    background-image: url('/images/staffordshire_img/walkingaway.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .content-right {
+    margin: 18% 8%;
+    padding-left: 4%;
+
+    h2 {
+      margin-bottom: 5%;
+    }
+
+    span {
+      color: $colorTwo;
+    }
+    ol {
+      width: 80%;
+      font-size: 1rem;
+      line-height: 25px;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    .sideimg {
+      height: 60vh;
+    }
+
+    .content-right {
+      margin: 25% 4%;
+    }
+  }
+}
+
+
+
+
+.txt {
+  height: 80vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/images/hlp-summerside.jpg");
+
+  p {
+    top: 50%;
+    left: 50%;
+    width: 55%;
+    color: $colorWhite;
+    font-size: 120%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    background-attachment: inherit;
+
+    p {
+      width: 85%;
+    }
+  }
+}
+
+
+
+#obj {
+  height: auto;
+  padding: 0;
+
+  .col-sm-3 {
+    height: 20rem;
+    background-color: $colorOne;
+  }
+
+  .obj-txt {
+    padding: 10% 0;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: $colorWhite;
+  }
+
+  .img {
+    background-size: 70%;
+    background-image: url('/images/lamppost.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .img2 {
+    background-size: 60%;
+    background-image: url('/images/lighthouse.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .img3 {
+    background-size: 70%;
+    background-image: url('/images/flag.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: $colorThree;
+  }
+
+  .img4 {
+    background-size: 50%;
+    background-image: url('/images/bin.png');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: $colorThree;
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    .col-sm-3 {
+      height: 25rem;
+    }
+    .obj-txt {
+      display: none;
+    }
+    .img, .img3 {
+      background-color: $colorWhite;
+    }
+  }
+}
+
+
+//Hero Objects List
+
+#hero-list {
+  background: $colorOne;
+  padding-bottom: 0;
+
+  .row{
+    margin: 0 8%;
+  }
+
+  .obj-list {
+    height: 50vh;
+
+    .list-container{
+      width: 50%;
+      float: left;
+      padding-top: 30px;
+
+    }
+
+    .left {
+      padding-right: 20px;
+    }
+
+    .right {
+      padding-left: 20px;
+    }
+  }
+
+  .obj-images{
+    background: url('/images/summerside-objects.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height:60vh;
+  }
+
+  @media only screen and (min-width: 768px) {
+    height: 500px;
+  
+    li {
+      font-size: 0.72em;
+    }
+  }
+
+  @media only screen and (min-width: 960px) {
+
+    li{
+      font-size: 0.85em;
+    }
+  }
+
+  @media only screen and (min-width: 1140px ) {
+    li {
+      font-size: 0.9em;
+    }
+  }
+
+}
+
+
+#map2 {
+  height: 90vh;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url("/images/Map.jpg");
+}
+
+
+
+#tellmewhy {
+  height: 300px;
+  background-color: $colorTwo;
+
+  hr {
+    margin: auto;
+    position: unset;
+    background-color: $colorThree;
+  }
+
+  h2 {
+    margin-top: 1%;
+    text-align: center;
+    margin-bottom: 60px;
+    color: $colorWhite;
+  }
+
+  .col-lg-3 {
+    width: 33.33%;
+    padding: 6%;
+
+    .image-circle {
+      width: 150px;
+      margin: 0 auto 30px;
+      background-color: $colorThree;  
+
+      img {
+        top: 30px;
+        left: 30px;
+        width: 60%;
+      }
+    }
+
+    h3 {
+      width: 60%;
+      margin: 0 auto;
+      font-size: 100%;
+      text-align: center;
+      letter-spacing: unset;
+      color: $colorWhite;
+    }
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    padding: 25% 0;
+
+    .col-lg-3 {
+      width: unset;
+      padding: 15% 0;
+    }
+  }
+}
+
+
+
+.supporters {
+  height: auto;
+  padding: 30px 0;
+  background-color: $colorTwo;
+
+  .col-sm-12 {
+    padding: 3% 10%;
+
+    hr {
+      margin: auto;
+      position: unset;
+      background-color: $colorThree;
+    }
+
+    h2 {
+      margin-top: 1%;
+      margin-bottom: 4%;
+    }
+
+    h2, p {
+      text-align: center;
+      color: $colorWhite;
+    }
+  }
+
+  .col-sm-6 {
+    img {
+      width: 30%;
+      display: block;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+  }
+
+  /*Mobile Phone Media Query*/
+  @include mq("super-small", "max-width") {
+    padding: 25% 0;
+
+    .col-sm-12 {
+      p {
+        padding: 5% 0;
+      }
+    }
+
+    .col-sm-6 {
+      img {
+        width: 50%;
+        padding: 30px 0;
+      }
+    }
+
+  }
+}
+
+
+
+
+#contact {
+  background-color: $colorOne;
+  height: 65vh;
+
+  a {
+    text-decoration: none;
+  }
+
+  .link-btn-one {
+    color: $colorTwo;
+    background-color: $colorWhite;
+
+    &:after {
+      background-image: url('/images/arrow-black.svg');
+    }
+
+    &:hover {
+      color: $colorOne;
+      background-color: $colorTwo;
+
+      &:after {
+        background-image: url('/images/arrow-yellow.svg');
+      }
+    }
+  }
+}
+
+
+
+
+//==========================================================
+//Content for terms, privacy, privacy statement page
+//==========================================================
+.homepage {
+  .content {
+    background: $colorOne;
+
+    h1 {
+      line-height: 1.2;
+      font-size: 3.5rem;
+
+      p {
+        opacity: 0.8;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+#legal {
+  font-size: 16px;
+  padding: 115px 0 25px 0;
+
+  a {
+    color: #2a2a2a;
+    padding-bottom: 2px;
+    border-bottom: 1px solid;
+    text-decoration: none;
+    font-family: Gotham-medium, sans-serif;
+  }
+  .links {
+    margin-bottom: 20px;
+  }
+
+  .col-sm-6 {
+    padding: 0 30px;
+
+    h5 {
+      border: 0;
+      padding: 0;
+      margin: 10px 0;
+      max-width: 100%;
+      text-transform: uppercase;
+      font-family: Gotham-bold, sans-serif;
+    }
+    ul li {
+      opacity: 0.8;
+      padding: 0.3em 0;
+      line-height: 1.5em;
+      list-style-type: decimal;
+      list-style-position: inside;
+    }
+  }
+
+  .pushed-column {
+    padding-top: 135px;
+  }
+
+  @include mq("small", "max-width") {
+    padding: 115px 0 25px 0;
+
+    .col-sm-6 {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .pushed-column {
+      padding-top:0;
+    }
+  }
+
+  @include mq("nano", "max-width") {
+		padding: 115px 0 25px 0;
+
+		.links{
+			font-size: 15px;
+		}
+
+		.col-sm-6 {
+			margin: 0;
+			padding: 0;
+			width: 100%;
+
+      h1{
+  			margin-bottom: 15px;
+  		}
+		}
+
+		.pushed-column {
+			padding-top:0;
+		}
+	}
+}
+
+
+#news {
+  background: $colorOne;
+  padding: 70px 0;
+
+  .right-block{
+    width: 50%;
+  }
+
+  a{
+    color: #2a2a2a;
+    border-bottom: 2px solid #2a2a2a;
+  }
+}

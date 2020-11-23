@@ -1,0 +1,352 @@
+<!--Landing Page-->
+<header class="hero">
+  <div class="grid-container">
+    <div class="row">
+      <img src="/images/Logo1.png" alt="">
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-8" align="center">
+        <h1>Your city is coming to life, and wants to chat to its citizens!</h1>
+        <a href="#about" class="link-btn-one js-scroll-down-button scroll-down-button" role="button">Find Out More</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<!--About-->
+<section id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="container">
+        <div class="content">
+          <hr>
+          <h2>About</h2>
+          <!--<h5>Hello Summerside will be launching on 28th June, 2019.</h5>-->
+          <p>Hello Staffordshire is a new communication tool which allows citizens and residents to playfully 
+          interact with their environment, and have their say on it’s future. Through text-based interactions 
+          with street furniture around public spaces in Staffordshire, anyone with a mobile phone can join the conversation!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 sideimg"></div>
+  </div>
+</section>
+
+
+<!--Use cases-->
+<section id="tellmewhy" class="container-fluid">
+  <div class="grid-container">
+    <hr align="center">
+    <h2>What's in it for YOU?</h2>
+  </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-3">
+          <div class="image-circle">
+            <img src="/images/group.png" alt="icon">
+          </div>
+          <h3>Give your feedback on your local neighbourhood and its public spaces.</h3>
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="image-circle">
+            <img src="/images/negotiation.png" alt="icon">
+          </div>
+          <h3>Fun and interactive way to share stories and opinions on the future of Staffordshire.</h3>
+        </div>
+
+        <div class="col-sm-12 col-md-3 col-lg-3">
+          <div class="image-circle">
+            <img src="/images/feedback.png" alt="icon">
+          </div>
+          <h3>Participate in local decisions and keep informed on the latest changes.</h3>
+        </div>
+      </div>
+</section>
+
+
+
+
+<!--How it Works-->
+<section id="process" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 sideimg"></div>
+
+    <div class="col-sm-6">
+      <div class="content-right">
+        <hr>
+        <h2>How to play</h2>
+        <p>All you need to chat with objects is a basic mobile phone! It’s free to play 
+          (standard text messaging rates apply) and suitable for all ages. Look out for 
+          call to action signage on streets, passageways and the broadway.</p>
+
+        <ol>
+          <li>Look out for signage on street furniture around the area.</li>
+          <li>Text object using the designated phone number, <span class="bold"> e.g Hello Lamp Post </span></li>
+          <li>Keep chatting, find other objects nearby or come back another day for a different conversation!</li>
+        </ol>
+
+          <!--<a href="#map" class="link-btn-one js-scroll-down-button scroll-down-button" role="button">Map</a>-->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!--<section class="txt container-fluid">
+  <div class="row">
+    <p>30 objects across your City, including a lighthouse, a flagpole, lamp posts,
+      benches and trash cans will be waking up, inviting citizens to strike up
+      playful conversations in the street!</p>
+  </div>
+</section>-->
+
+
+<!--Objects-->
+<%# <section id="obj" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 obj-txt">
+      <h2>Trash Cans</h2>
+    </div>
+    <div class="col-sm-3 obj img"></div>
+    <div class="col-sm-3 obj-txt">
+      <h2>Flagpole</h2>
+    </div>
+    <div class="col-sm-3 obj img2"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3 obj img3"></div>
+    <div class="col-sm-3 obj-txt">
+      <h2>Benches</h2>
+    </div>
+    <div class="col-sm-3 obj img4"></div>
+    <div class="col-sm-3 obj-txt">
+      <h2>Lighthouse</h2>
+    </div>
+  </div>
+</section> %>
+
+
+<section id="statistics">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="figure-holder">
+        <h1 id="conversation">Hello</h1>
+        <h3>Conversations</h3>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="figure-holder">
+        <h1 id="players">1,000</h1>
+        <h3>Players</h3>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="figure-holder">
+        <h1 id="messages">1,000</h1>
+        <h3>Messages</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+  $.getJSON("https://hello-lamp-post-api.herokuapp.com/locations/59", function(data){
+
+    function comma_add(num){
+      var num_parts = num.toString().split(".");
+      num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return num_parts.join(".");
+    } 
+
+    document.getElementById('conversation').innerHTML = comma_add(data.conversations);
+    document.getElementById('players').innerHTML = comma_add(data.players);
+    document.getElementById('messages').innerHTML = comma_add(data.player_messages);
+    });
+</script>
+
+
+<!--Map-->
+<%= erb :_googlemap %>
+
+
+
+<!--List of Hero Objects
+<section id="hero-list" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-6 obj-list content">
+      <hr>
+      <h2>List of Hero Objects</h2>
+      <div class="list-container left">
+          <ol>
+            <li>Squirrel Bridge</li>
+            <li>Green's Shore Shelter</li>
+            <li>Canadian Flag</li>
+            <li>Sponsorship Vehicle</li>
+            <li>Credit Union Place</li>
+            <li>Shipyard Shelter</li>
+            <li>Vault Door</li>
+            <li>Journal Pioneer Building</li>
+            <li>Menu</li>
+            <li>Inspire Learning Centre</li>
+            <li>Lucky Chairs</li>
+            <li>Sundial</li>
+            <li>City Hall</li>
+            <li>Heather Moyse Gazebo</li>
+            <li>Sign Box</li>
+          </ol>
+      </div>
+      <div class="list-container right">
+        <ol start="16">
+          <li>Traffic Light</li>
+          <li>Murals</li>
+          <li>Downtown</li>
+          <li>Lamp Post</li>
+          <li>Little Lighthouse</li>
+          <li>Trash Can</li>
+          <li>Wyatt Historic House</li>
+          <li>Lefurgey Building</li>
+          <li>Pillory</li>
+          <li>Lighthouse</li>
+          <li>Batting Cage</li>
+          <li>Concession Stand</li>
+          <li>Bench</li>
+          <li>Leger Park</li>
+          <li>Piper Statue</li>
+        </ol>
+      </div>
+    </div>
+    <div class="col-sm-6 obj-images" />
+  </div>
+</section> -->
+
+
+
+<!--Quote
+<section id="testimonials">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  Wrapper for slides
+    <div class="carousel-inner">
+      <div class="item active">
+        <span>“</span>
+        <p>We’re very excited to be launching our first city-wide deployment in
+          Canada, a project which aims to empower the voices of all citizens through
+          a fun and interactive platform. Interactions will continually contribute
+          to the City’s decision making process, whether that be around City budgets,
+          infrastructure or the culture and history of the City.”</p>
+
+        <p>We believe this is the start of an exciting journey for citizens of
+          Summerside, helping them to co-create different areas and aspects of
+          their City, through a unique experience which allows them to literally
+          speak to their City!”</p>
+        <p class="customer">- Tiernan Mines, CEO of Hello Lamp Post</p>
+      </div>
+
+      <div class="item">
+        <span>“</span>
+        <p>This pilot is about finding unique ways to engage our citizens and
+          visitors to participate in direct dialogue about the future direction
+          of our City. This platform is an innovative way to ensure we target a
+          cross section of our demographic while at the same time assisting HLP
+          with North American expansion plans."</p>
+          <p class="customer">- City of Summerside, Economic Development Office</p>
+      </div>
+    </div>-->
+
+    <!-- Left and right controls
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+    Indicators
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+  </div>
+</section>-->
+
+
+<!--Supporters
+<section class="supporters container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <hr align="center">
+      <h2>Hello Summerside Partners</h2>
+      <p>Thanks to the partners who have made this project possible, like various
+      City departments, a number of local organizations and local businesses.
+      These include: Dept. of Community Services, Dept. of Finance, Culture
+      Summerside, Explore Summerside, Downtown Summerside, Harbourfront Theatre,
+      College of Piping, Spinnakers’ Landing, Inspire Learning Centre, South
+      Central Kitchen &amp; Provisions, Holman’s Ice Cream Parlour, Samuel’s Coffee
+      House.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <img src="/images/summerside-logo-white.png">
+    </div>
+    <div class="col-sm-6">
+     <img src="/images/White.png" alt="">
+    </div>
+  </div>
+</section>-->
+
+
+
+
+<script type="text/javascript">
+  window.sr = ScrollReveal();
+  sr.reveal('.content', {
+    duration: 2000,
+    origin: 'left',
+    distance: '300px'
+  });
+  sr.reveal('.content-right', {
+    duration: 2000,
+    origin: 'right',
+    distance: '300px',
+    viewFactor: 0.2
+  });
+  sr.reveal('.bgphone', {
+    duration: 2000,
+    origin: 'bottom',
+    distance: '300px',
+    viewFactor: 0.2
+  });
+  sr.reveal('.process-item', {
+    duration: 1000,
+    origin: top,
+    viewFactor: 0.2
+  });
+  sr.reveal('.locationtext', {
+    duration: 1500,
+    origin: 'left',
+    distance: '300px',
+    viewFactor: 0.2
+  });
+  sr.reveal('.left', {
+    duration: 2000,
+    origin: 'left',
+    distance: '300px',
+    viewFactor: 0.2
+  });
+  sr.reveal('.right', {
+    duration: 2000,
+    origin: 'right',
+    distance: '300px',
+    viewFactor: 0.2
+  });
+</script>

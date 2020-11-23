@@ -1,0 +1,134 @@
+// =================================================================
+// 	Mediapreview
+// 	Links
+// =================================================================
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link-btn-one {
+  margin-top: 40px;
+	padding: 16px 20px 16px 20px;
+	@include border-radius(8px);
+	background: $colorTwo;
+	color: $colorOne;
+	display: block;
+	width: intrinsic;
+	max-width: 260px;
+	font-family: "Gotham-Bold", sans-serif;
+	font-size: 1em;
+	border: none;
+  transition: all 0.3s ease-in-out;
+
+  /*Desktop Media Query*/
+  @include mq("extra-extra-large", "min-width") {
+   font-size: 1.3em;
+   max-width: 310px;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 17px;
+    height: 17px;
+    background-image: url('/images/arrow-yellow.svg');
+    margin-top: 2px;
+    background-size: 100% 100%;
+    background-position: 0 0;
+    float: right;
+    margin-left: 10px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  &:hover{
+    background: $colorWhite;
+    color: $colorTwo;
+
+    &:after {
+      background-image: url('/images/arrow-black.svg');
+      margin-top: 2px;
+      background-size: 100% 100%;
+      background-position: 0 0;
+      float: right;
+      margin-left: 10px;
+    }
+  }
+}
+
+.link-messenger {
+  background: #448AFF;
+  color: #fff;
+  max-width: 300px;
+  padding: 22px 45px;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.4em;
+  box-shadow: 0px 0px 10px darken($colorTwo, 10%);
+
+  &:after {
+    margin-top: -3px;
+    margin-left: 20px;
+    width: 30px;
+    height: 30px;
+    background-image: url('/images/messenger_icon.svg');
+  }
+
+  &:hover {
+    background: darken(#448AFF, 5%);
+  }
+
+  &:active {
+    background: #448AFF;
+    box-shadow: none;
+  }
+}
+
+.en {
+  .link-btn-one {
+    font-weight: normal;
+  }
+}
+
+.link-exit {
+ width: 25px;
+ height: 25px;
+ background-image: url('/images/exit.svg');
+ margin-top: 2px;
+ background-size: 100% 100%;
+ background-position: 0 0;
+ display: block;
+ float: right;
+ margin-top: 100px;
+ z-index: 100;
+}
+
+.link-scroll {
+  padding: 45px 0;
+  text-align: center;
+  font-family: "Gotham-bold", sans-serif;
+  color: #fff;
+  width: 100%;
+  //height: 100px;
+  z-index: 10;
+  position: absolute;
+  display: block;
+  top: 80vh;
+  left: 0;
+  //font-size: 16px;
+  overflow: visible;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    padding-top: -10px;
+    margin-left: 10px;
+    vertical-align: -3px;
+    width: 41px;
+    height: 20px;
+    background-image: url("/images/arrow-down.svg");
+    background-size: 100% 90%;
+    background-position: 0 2px;
+    background-repeat: no-repeat;
+  }
+}

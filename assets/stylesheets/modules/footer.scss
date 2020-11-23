@@ -1,0 +1,51 @@
+// =================================================================
+// 	Hello Lampost
+// 	Footer
+// =================================================================
+
+.footer {
+	padding: 18px 0;
+	background: ($colorTwo);
+	font-size: 16px;
+	height: auto;
+  bottom: 0;
+  width: 100%;
+	overflow: auto;
+	clear: both;
+	display: block;
+
+	p {
+		color: #fff;
+		opacity: 0.7;
+	}
+
+	a {
+		opacity: 0.7;
+		color: $colorWhite;
+		border-bottom: 2px solid $colorThree;
+		padding-bottom: 4px;
+		transition: all 0.3s ease-in-out;
+	}
+
+	a:hover{
+		opacity: 1;
+    border-bottom: 2px solid $colorOne;
+
+	}
+
+	.right {
+		float: right;
+		text-align: right;
+	}
+
+	@include mq("small", "max-width") {
+		padding: 15px 0 13px 0;
+		text-align: left;
+	}
+
+	@include mq("extra-small", "max-width") {
+		.right{
+			text-align: left;
+		}
+	}
+}

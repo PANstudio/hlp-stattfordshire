@@ -1,0 +1,112 @@
+// =================================================================
+//  Hello Lamp Post
+// 	Forms
+// =================================================================
+
+form {
+	padding-top: 40px;
+
+	.form-half {
+		width: calc(50% - 15px);
+		float: left;
+		margin-right: 30px;
+
+		&:nth-child(even) {
+			margin-right: 0;
+		}
+	}
+
+	input[type="text"], input[type="email"], input[type="submit"], select, textarea, button {
+		width: 100%;
+		padding: 15px 15px;
+		margin: 20px 0;
+    font-family: "Gotham-Medium", sans-serif;
+		background: $colorTwo;
+    color: #fff;
+		border: 0;
+		font-size: 0.9em;
+		box-sizing: border-box;
+		@include border-radius(8px);
+		-webkit-appearance: none;
+   		-moz-appearance: none;
+   		appearance: none;
+
+		&:focus {
+			outline: 0;
+			border: 0;
+		}
+	}
+
+  select {
+    background-image: url('/images/dropdown-arrows.svg');
+		margin-top: 15px;
+		background-size: 40px 40px;
+		background-position: right 5px;
+		background-repeat: no-repeat;
+		text-transform: none;
+		height: auto;
+  }
+
+	label {
+		color: $colorTwo;
+		font-family: "Gotham-Bold", sans-serif;
+		text-transform: uppercase;
+	}
+
+	textarea {
+		resize: none;
+		text-transform: none;
+	}
+
+	input[type="submit"] {
+		padding: 16px 20px 16px 20px;
+		@include border-radius(8px);
+		background: $colorTwo;
+		color: #fff;
+		display: block;
+		width: intrinsic;
+		max-width: 200px;
+		font-family: "Gotham-Bold", sans-serif;
+		font-size: 1em;
+		border: 0;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    color: #fff;
+    float: right;
+
+    &:hover {
+      color: $colorThree;
+      transition: all 0.3s ease-in-out;
+    }
+
+		&:after {
+			content: "";
+			display: block;
+			width: 17px;
+			height: 17px;
+			background-image: url('/images/arrow-yellow.svg');
+			margin-top: 2px;
+			background-size: 100% 100%;
+			background-position: 0 0;
+			float: right;
+			margin-left: 10px;
+      transition: all 0.3s ease-in-out;
+		}
+
+
+		@include mq("small", "max-width") {
+		}
+	}
+}
+
+.contact-form {
+
+  fieldset {
+    float: left;
+    @include calc(width, "50% - 15px");
+
+    &:first-child {
+      margin-right: 25px;
+    }
+  }
+}

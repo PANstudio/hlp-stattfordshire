@@ -1,0 +1,81 @@
+// =================================================================
+// 	Mediapreview
+// 	Mixins
+// =================================================================
+
+$breakpoints: (
+  "nano" 320px,
+  "super-small" 425px,
+  "extra-small" 768px,
+  "small" 960px,
+  "medium" 1024px,
+  "large" 1300px,
+  "extra-large" 1440px,
+  "extra-extra-large" 2560px
+);
+
+
+
+
+@mixin mq($size, $type: "min-width") {
+  @each $breakpoint in $breakpoints {
+    @if ($size == nth($breakpoint, 1)) {
+      @media ($type: nth($breakpoint, 2)) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+@mixin animation--fadedown($delay) {
+  @include animation(fadeIn 0.8s cubic-bezier(0.730, -0.600, 0.320, 1.650));
+  @include animation-iteration-count(1);
+  @include animation-fill-mode(forwards);
+  @include animation-delay(#{$delay}s);
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+      -moz-box-shadow:$top $left $blur $color #{$inset};
+      box-shadow:$top $left $blur $color #{$inset};
+    }
