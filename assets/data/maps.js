@@ -1,37 +1,37 @@
 const markers = [
     {
-        content :"Squirrel Bridge",
+        content :"Cannock 63 Market Place",
         coords:{
-            lat:46.3954208,
-            lng: -63.8247572
+            lat:52.6892191,
+            lng: -2.0311583
         },
     },
     {
-        content :"Green's Shore Shelter",
+        content :"Cannock Card Stop",
         coords:{
-            lat:46.395279,
-            lng: -63.8045548
+            lat:52.6897613,
+            lng: -2.0300394
         },
     },
     {
-        content :"Canadian Flag",
+        content :"Cannock Market Place",
         coords:{
-            lat:46.3984425,
-            lng: -63.8012048
+            lat:52.6897317,
+            lng: -2.0311454
         },
     },
     {
-        content :"Sponsorship Vehicle",
+        content :"Cannock Tree#2",
         coords:{
-            lat:46.3983685,
-            lng: -63.8005342
+            lat:52.6888197,
+            lng: -2.0300577
         },
     },
     {
-        content :"Credit Union Place",
+        content :"Cannock Bollard#2",
         coords:{
-            lat:46.3988771,
-            lng: -63.800323
+            lat:52.6895391,
+            lng: -2.0321957
         },
     },
     {

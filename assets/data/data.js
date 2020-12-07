@@ -4,50 +4,50 @@ var geojson = {
         type: 'Feature',
         geometry: {
         type: 'Point',
-        coordinates: [-63.8247572, 46.3952793]
+        coordinates: [-2.0311583, 52.6892191]
         },
         properties: {
-        title: 'Squirrel Bridge',
+        title: 'Cannock 63 Market Place',
         }
     },
     {
         type: 'Feature',
         geometry: {
         type: 'Point',
-        coordinates: [ -63.8045548, 46.395279]
+        coordinates: [ -2.0300394, 52.6897613]
         },
         properties: {
-        title: "Green's Shore Shelter",
+        title: "Cannock Card Stop",
         }
     },
     {
         type: 'Feature',
         geometry: {
         type: 'Point',
-        coordinates: [ -63.8012048, 46.3984425]
+        coordinates: [ -2.0311454, 52.6897317]
         },
         properties: {
-        title: "Canadian Flag",
+        title: "Cannock Market Place",
         }
     },
     {
         type: 'Feature',
         geometry: {
         type: 'Point',
-        coordinates: [ -63.8012048, 46.3984425]
+        coordinates: [ -2.0300577, 52.6888197]
         },
         properties: {
-        title: "Sponsorship Vehicle",
+        title: "Cannock Tree#2",
         }
     },
     {
         type: 'Feature',
         geometry: {
         type: 'Point',
-        coordinates: [ -63.800323, 46.3983685]
+        coordinates: [ -2.0321957, 52.6895391]
         },
         properties: {
-        title: "Credit Union Place",
+        title: "Cannock Bollard#2",
         }
     },
     {
