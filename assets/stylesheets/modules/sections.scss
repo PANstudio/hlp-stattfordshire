@@ -257,10 +257,18 @@ header {
     background-position: bottom;
     background-repeat: no-repeat;
   }
+  .sideimg-roads {
+    height: 85vh;
+    background-size: 150%;
+    //background-color: $colorThree;
+    background-image: url('/images/staffordshire_img/roads.jpeg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
 
   /*Mobile Phone Media Query*/
   @include mq("super-small", "max-width") {
-    .sideimg {
+    .sideimg, .sideimg-roads {
       height: 60vh;
     }
   }

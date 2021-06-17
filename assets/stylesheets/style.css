@@ -1130,8 +1130,14 @@ header {
     background-image: url("/images/staffordshire_img/walking.png");
     background-position: bottom;
     background-repeat: no-repeat; }
+  #about .sideimg-roads {
+    height: 85vh;
+    background-size: 150%;
+    background-image: url("/images/staffordshire_img/roads.jpeg");
+    background-position: bottom;
+    background-repeat: no-repeat; }
   @media (max-width: 425px) {
-    #about .sideimg {
+    #about .sideimg, .sideimg-roads {
       height: 60vh; } }
 
 #testimonials {
