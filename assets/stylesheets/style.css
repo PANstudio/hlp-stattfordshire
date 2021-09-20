@@ -1238,6 +1238,13 @@ header {
     background-image: url("/images/staffordshire_img/walkingaway.jpg");
     background-position: bottom;
     background-repeat: no-repeat; }
+  #process .sideimg-sustainable {
+    height: 85vh;
+    background-size: 150%;
+    background-image: url("/images/staffordshire_img/sustainable.jpeg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
   #process .content-right {
     margin: 18% 8%;
     padding-left: 4%; }
